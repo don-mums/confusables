@@ -5,14 +5,7 @@ import urllib.request
 
 
 def get_confusables_file():
-  try:
-    return open('src/confusables.txt', 'rb')
-  except FileNotFoundError:
-    print('retrieving latest confusables.txt')
-    req = urllib.request.urlretrieve(
-        'http://www.unicode.org/Public/security/latest/confusables.txt',
-        'src/confusables.txt')
-    return open('src/confusables.txt', 'rb')
+  return open('src/confusables.txt', 'rb')
 
 
 def build_confusables_table(cf):
